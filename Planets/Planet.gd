@@ -55,4 +55,4 @@ func _set_colors_from_vars(mat, vars, colors):
 		index += 1
 
 func random_color():
-	return Color.from_hsv(rand_range(0.0,1.0), 0.75, 0.75)
+	return Color.from_hsv(rand_range(0.0, 1.0), 0.75, 0.75)
