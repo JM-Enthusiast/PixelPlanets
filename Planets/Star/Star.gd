@@ -81,14 +81,14 @@ func set_colors(colors):
 	
 func set_random_colors():
 	var color_pool = []
-	var current_color = random_color()
+	var current_color = random_color(0.75, 0.85)
 	# Adding the StarBackground color
 	color_pool.push_back(current_color.lightened(0.85))
 	# Adding the Star colors
 	color_pool.push_back(current_color.lightened(0.8))
-	color_pool.push_back(current_color.lightened(0.3))
+	color_pool.push_back(current_color.lightened(0.45))
 	color_pool.push_back(current_color)
-	color_pool.push_back(current_color.darkened(0.45))
+	color_pool.push_back(current_color.darkened(0.55))
 	# Adding the StarFlares colors
 	color_pool.push_back(current_color.lightened(0.3))
 	color_pool.push_back(current_color.lightened(0.85))

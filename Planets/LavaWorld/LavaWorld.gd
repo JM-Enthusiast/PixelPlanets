@@ -52,7 +52,7 @@ func set_colors(colors):
 
 func set_random_colors():
 	var colors = []
-	var current_color = random_color()
+	var current_color = random_color(0.75, 0.65)
 	var analog_color1
 	var analog_color2
 	# Adding the PlanetUnder colors

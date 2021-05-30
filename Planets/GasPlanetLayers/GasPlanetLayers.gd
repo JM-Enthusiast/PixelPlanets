@@ -50,13 +50,13 @@ func set_colors(colors):
 
 func set_random_colors():
 	var colors = []
-	var current_color = random_color()
+	var current_color = random_color(0.65, 0.5)
 	# Adding the "colorscheme" colors
 	colors.push_back(current_color.lightened(0.65))
 	colors.push_back(current_color.lightened(0.45))
 	colors.push_back(current_color.lightened(0.25))
 	# Adding the "dark_colorscheme" colors
 	colors.push_back(current_color)
-	colors.push_back(current_color.darkened(0.5))
+	colors.push_back(current_color.darkened(0.65))
 	colors.push_back(current_color.darkened(0.85))
 	set_colors(colors)

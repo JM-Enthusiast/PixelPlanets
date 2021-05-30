@@ -65,7 +65,7 @@ func set_random_colors():
 	colors.append(current_color.darkened(0.4))
 	colors.append(current_color.darkened(0.7))
 	# Adding the Cloud colors
-	current_color = random_color().darkened(0.5)
+	current_color = random_color(0.5, 0.4)
 	colors.append(current_color.lightened(0.9))
 	colors.append(current_color.lightened(0.7))
 	colors.append(current_color.lightened(0.3))

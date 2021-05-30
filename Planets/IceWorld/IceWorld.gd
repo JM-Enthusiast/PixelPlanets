@@ -52,18 +52,18 @@ func set_colors(colors):
 
 func set_random_colors():
 	var colors = []
-	var current_color = random_color().lightened(0.5)
+	var current_color = random_color(0.1, 0.9)
 	# Adding the PlanetUnder colors
-	colors.append(current_color.lightened(0.6))
+	colors.append(current_color.lightened(0.7))
 	colors.append(current_color)
 	colors.append(current_color.darkened(0.3))
 	#Adding the Lakes colors
-	current_color = random_color().lightened(0.4).darkened(0.15)
+	current_color = random_color(0.4, 0.85)
 	colors.append(current_color)
 	colors.append(current_color.darkened(0.4))
-	colors.append(current_color.darkened(0.5))
+	colors.append(current_color.darkened(0.6))
 	# Adding the Clouds colors
-	current_color = random_color().darkened(0.5)
+	current_color = random_color(0.5, 0.4)
 	colors.append(current_color.lightened(0.9))
 	colors.append(current_color.lightened(0.7))
 	colors.append(current_color.lightened(0.3))

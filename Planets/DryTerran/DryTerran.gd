@@ -26,11 +26,11 @@ func set_colors(colors):
 func set_random_colors():
 	var colors = []
 	var current_color = random_color()
-	var analog_color1 = Color.from_hsv(current_color.h + 0.035, current_color.s, current_color.v)
+	var analog_color1 = Color.from_hsv(current_color.h + 0.05, current_color.s, current_color.v)
 	var analog_color2 = Color.from_hsv(current_color.h - 0.035, current_color.s, current_color.v)
-	colors.append(analog_color1.lightened(0.2))
+	colors.append(analog_color1.lightened(0.3))
 	colors.append(current_color)
-	colors.append(analog_color2.darkened(0.2))
+	colors.append(analog_color2.darkened(0.25))
 	colors.push_back(current_color.darkened(0.6))
 	colors.push_back(current_color.darkened(0.7))
 	
