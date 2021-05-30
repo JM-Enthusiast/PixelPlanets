@@ -78,3 +78,18 @@ func set_colors(colors):
 	$StarBackground.material.set_shader_param("color", colors[0])
 	_set_colors_from_gradient($Star.material, "colorramp", cols1)
 	_set_colors_from_gradient($StarFlares.material, "colorramp", cols2)
+	
+func set_random_colors():
+	var color_pool = []
+	var current_color = random_color()
+	# Adding the StarBackground color
+	color_pool.push_back(current_color.lightened(0.85))
+	# Adding the Star colors
+	color_pool.push_back(current_color.lightened(0.8))
+	color_pool.push_back(current_color.lightened(0.3))
+	color_pool.push_back(current_color)
+	color_pool.push_back(current_color.darkened(0.45))
+	# Adding the StarFlares colors
+	color_pool.push_back(current_color.lightened(0.3))
+	color_pool.push_back(current_color.lightened(0.85))
+	set_colors(color_pool)

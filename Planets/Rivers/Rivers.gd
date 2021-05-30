@@ -40,3 +40,21 @@ func get_colors():
 func set_colors(colors):
 	_set_colors_from_vars($Land.material, color_vars1, colors.slice(0, 5, 1))
 	_set_colors_from_vars($Cloud.material, color_vars2, colors.slice(6, 9, 1))
+
+func set_random_colors():
+	var current_color = random_color()
+	var colors = []
+	# Adding the Land colors
+	colors.append(current_color.lightened(0.5))
+	colors.append(current_color)
+	colors.append(current_color.darkened(0.4))
+	colors.append(current_color.darkened(0.7))
+	current_color = random_color()
+	colors.append(current_color)
+	colors.append(current_color.darkened(0.65))
+	# Adding the Cloud colors
+	colors.append(current_color.lightened(0.9))
+	colors.append(current_color.lightened(0.7))
+	colors.append(current_color.darkened(0.65).lightened(0.1))
+	colors.append(current_color.darkened(0.65))
+	set_colors(colors)

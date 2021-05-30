@@ -97,9 +97,6 @@ void fragment() {
 	
 	// we use this value later to dither between colors
 	bool dith = dither(uv, UV);
-	
-	float a = step(length(uv-vec2(0.5)), 0.5);
-	
 	uv = rotate(uv, rotation);
 
 	
@@ -138,6 +135,6 @@ void fragment() {
 		col = texture(dark_colorscheme, vec2(posterized-1.0, uv.y)).rgb;
 	}
 	
-	
+	float a = step(length(uv-vec2(0.5)), 0.5);
 	COLOR = vec4(col, a);
 }

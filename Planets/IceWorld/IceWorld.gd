@@ -49,3 +49,23 @@ func set_colors(colors):
 	_set_colors_from_vars($PlanetUnder.material, color_vars1, colors.slice(0, 2, 1))
 	_set_colors_from_vars($Lakes.material, color_vars2, colors.slice(3, 5, 1))
 	_set_colors_from_vars($Clouds.material, color_vars3, colors.slice(6, 9, 1))
+
+func set_random_colors():
+	var colors = []
+	var current_color = random_color().lightened(0.5)
+	# Adding the PlanetUnder colors
+	colors.append(current_color.lightened(0.6))
+	colors.append(current_color)
+	colors.append(current_color.darkened(0.3))
+	#Adding the Lakes colors
+	current_color = random_color().lightened(0.4).darkened(0.15)
+	colors.append(current_color)
+	colors.append(current_color.darkened(0.4))
+	colors.append(current_color.darkened(0.5))
+	# Adding the Clouds colors
+	current_color = random_color().darkened(0.5)
+	colors.append(current_color.lightened(0.9))
+	colors.append(current_color.lightened(0.7))
+	colors.append(current_color.lightened(0.3))
+	colors.append(current_color)
+	set_colors(colors)

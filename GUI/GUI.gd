@@ -184,3 +184,16 @@ func _close_picker():
 	$Panel.visible = false
 	for b in colorholder.get_children():
 		b.is_active = false
+
+
+func _on_RandomColor_pressed():
+	viewport_planet.get_child(0).set_random_colors()
+	colors = viewport_planet.get_child(0).get_colors()
+	for i in colorholder.get_child_count():
+			colorholder.get_child(i).set_color(colors[i])
+			
+func _on_ResetColor_pressed():
+	viewport_planet.get_child(0).set_colors(viewport_planet.get_child(0).original_colors)
+	colors = viewport_planet.get_child(0).get_colors()
+	for i in colorholder.get_child_count():
+		colorholder.get_child(i).set_color(colors[i])

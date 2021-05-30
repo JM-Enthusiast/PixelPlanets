@@ -2,8 +2,12 @@ extends Control
 
 var time = 1000.0
 var override_time = false
+var original_colors = []
 export (float) var relative_scale = 1.0
 
+func _ready():
+	randomize()
+	original_colors = get_colors()
 
 func set_pixels(_amount):
 	pass
@@ -49,3 +53,6 @@ func _set_colors_from_vars(mat, vars, colors):
 	for v in vars:
 		mat.set_shader_param(v, colors[index])
 		index += 1
+
+func random_color():
+	return Color.from_hsv(rand_range(0.0,1.0), 0.75, 0.75)

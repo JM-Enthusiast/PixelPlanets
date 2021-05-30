@@ -36,8 +36,22 @@ func set_colors(colors):
 	var cols1 = PoolColorArray(Array(colors).slice(1, 2))
 	var cols2 = PoolColorArray(Array(colors).slice(3, 7))
 	
-	
-	
 	$BlackHole.material.set_shader_param("black_color", colors[0])
 	_set_colors_from_gradient($BlackHole.material, "colorscheme", cols1)
 	_set_colors_from_gradient($Disk.material, "colorscheme", cols2)
+
+func set_random_colors():
+	var colors = []
+	var current_color = random_color()
+	var analog_color = Color.from_hsv(current_color.h + 0.08, current_color.s, current_color.v)
+	colors.push_back(Color(0.152941, 0.152941, 0.211765))
+#	 Adding the "colorscheme" colors for Blackhole material
+	colors.push_back(current_color.lightened(0.95))
+	colors.push_back(current_color)
+# 	Adding the "colorscheme" colors for Disk material
+	colors.push_back(current_color.lightened(0.95))
+	colors.push_back(analog_color)
+	colors.push_back(analog_color.lightened(0.35))
+	colors.push_back(current_color)
+	colors.push_back(current_color.darkened(0.65))
+	set_colors(colors)

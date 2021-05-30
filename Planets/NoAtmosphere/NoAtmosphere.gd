@@ -39,3 +39,15 @@ func get_colors():
 func set_colors(colors):
 	_set_colors_from_vars($PlanetUnder.material, color_vars1, colors.slice(0, 2, 1))
 	_set_colors_from_vars($Craters.material, color_vars2, colors.slice(3, 4, 1))
+
+func set_random_colors():
+	var current_color = random_color()
+	var colors = []
+	# Adding the PlanetUnder colors
+	colors.append(current_color.lightened(0.3))
+	colors.append(current_color)
+	colors.append(current_color.darkened(0.4))
+	# Adding the Craters colors
+	colors.append(current_color.darkened(0.05))
+	colors.append(current_color.darkened(0.405))
+	set_colors(colors)

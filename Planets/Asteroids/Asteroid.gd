@@ -26,3 +26,11 @@ func get_colors():
 
 func set_colors(colors):
 	_set_colors_from_vars($Asteroid.material, color_vars, colors)
+
+func set_random_colors():
+	var current_color = random_color()
+	var colors = []
+	colors.append(current_color.lightened(0.3))
+	colors.append(current_color)
+	colors.append(current_color.darkened(0.4))
+	set_colors(colors)
