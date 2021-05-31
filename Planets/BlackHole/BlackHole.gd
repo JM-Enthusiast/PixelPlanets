@@ -53,5 +53,5 @@ func set_random_colors():
 	colors.push_back(analog_color)
 	colors.push_back(analog_color.lightened(0.35))
 	colors.push_back(current_color)
-	colors.push_back(current_color.darkened(0.65))
+	colors.push_back(current_color.darkened(0.35))
 	set_colors(colors)

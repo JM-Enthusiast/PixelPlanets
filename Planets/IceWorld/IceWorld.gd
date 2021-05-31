@@ -52,9 +52,9 @@ func set_colors(colors):
 
 func set_random_colors():
 	var colors = []
-	var current_color = random_color(0.1, 0.9)
+	var current_color = random_color(0.05, 0.95)
 	# Adding the PlanetUnder colors
-	colors.append(current_color.lightened(0.7))
+	colors.append(current_color.lightened(0.85))
 	colors.append(current_color)
 	colors.append(current_color.darkened(0.3))
 	#Adding the Lakes colors

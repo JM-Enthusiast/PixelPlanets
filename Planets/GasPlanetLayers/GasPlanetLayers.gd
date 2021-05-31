@@ -51,12 +51,25 @@ func set_colors(colors):
 func set_random_colors():
 	var colors = []
 	var current_color = random_color(0.65, 0.5)
+	var analog_color1 = Color.from_hsv(current_color.h + 0.05, current_color.s, current_color.v + 0.15)
+	var analog_color2 = Color.from_hsv(current_color.h - 0.05, current_color.s, current_color.v - 0.15)
 	# Adding the "colorscheme" colors
-	colors.push_back(current_color.lightened(0.65))
-	colors.push_back(current_color.lightened(0.45))
-	colors.push_back(current_color.lightened(0.25))
+	colors.push_back(analog_color1.lightened(0.4))
+	colors.push_back(analog_color1.lightened(0.15))
+	colors.push_back(current_color.lightened(0.15))
 	# Adding the "dark_colorscheme" colors
 	colors.push_back(current_color)
-	colors.push_back(current_color.darkened(0.65))
-	colors.push_back(current_color.darkened(0.85))
+	colors.push_back(analog_color2.darkened(0.25))
+	colors.push_back(analog_color2.darkened(0.65))
+
+#	This was the old way assigning colors, can't decide which way looks better
+#	(they both look meh lol)
+#	# Adding the "colorscheme" colors
+#	colors.push_back(current_color.lightened(0.65))
+#	colors.push_back(current_color.lightened(0.45))
+#	colors.push_back(current_color.lightened(0.25))
+#	# Adding the "dark_colorscheme" colors
+#	colors.push_back(current_color)
+#	colors.push_back(current_color.darkened(0.65))
+#	colors.push_back(current_color.darkened(0.85))
 	set_colors(colors)

@@ -63,11 +63,11 @@ func set_random_colors():
 	colors.append(current_color.darkened(0.05))
 	colors.append(current_color.darkened(0.45))
 	# Adding the LavaRivers colors
-	current_color = random_color()
+	current_color = random_color(0.8, 0.85)
 #	current_color = current_color.inverted() # Uncomment for complementary color
 	analog_color1 = Color.from_hsv(current_color.h + 0.035, current_color.s, current_color.v)
 	analog_color2 = Color.from_hsv(current_color.h - 0.035, current_color.s, current_color.v)
-	colors.append(analog_color1.lightened(0.15))
+	colors.append(analog_color1.lightened(0.25))
 	colors.append(current_color)
 	colors.append(analog_color2.darkened(0.3))
 	
